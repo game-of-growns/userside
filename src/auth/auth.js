@@ -1,10 +1,10 @@
 const fakeAuthProvider = {
     signin(user, userCallback, adminCallBack) {
         if (user === 'user') {
-            setTimeout(userCallback, 100);
+            setTimeout(userCallback, 100); //fake api delay
             return true;
         } else if (user === 'admin') {
-            setTimeout(adminCallBack, 100);
+            setTimeout(adminCallBack, 100); //fake api delay
             return true;
         } else {
             return false;
@@ -12,7 +12,7 @@ const fakeAuthProvider = {
         
     },
     signout(callback) {
-        setTimeout(callback, 100);
+        setTimeout(callback, 100); //fake api delay
     },
 };
 

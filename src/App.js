@@ -9,6 +9,9 @@ import {
 } from "react-router-dom";
 import { fakeAuthProvider } from "./auth/auth";
 import Login from "./pages/Login"
+import Admin from "./layout/Admin";
+import UserPage from "./pages/UserPage";
+import UserManagement from "./pages/AdminPages/UserManagement";
 
 
 export default function App() {
@@ -22,10 +25,10 @@ export default function App() {
           />
           <Route path="/" element={<Navigate to="/login" />} />
           <Route
-            path="/admin"
+            path="/admin/*"
             element={
               <RequireAuth>
-                <AdminPage />
+                <Admin />
               </RequireAuth>
             }
           />
@@ -89,10 +92,33 @@ function RequireAuth({ children }) {
   return children;
 }
 
-function AdminPage() {
-  return <h3>Admin</h3>;
-}
-
-function UserPage() {
-  return <h3>User</h3>;
+function Test() {
+  return (
+    <div className="grid grid-cols-1 gap-6 mb-6 lg:grid-cols-3">
+      <div className="w-full px-4 py-5 bg-white rounded-lg shadow">
+        <div className="text-sm font-medium text-gray-500 truncate">
+          نمونه کارت
+        </div>
+        <div className="mt-1 text-3xl font-semibold text-gray-900">
+          متن
+        </div>
+      </div>
+      <div className="w-full px-4 py-5 bg-white rounded-lg shadow">
+        <div className="text-sm font-medium text-gray-500 truncate">
+          نمونه کارت
+        </div>
+        <div className="mt-1 text-3xl font-semibold text-gray-900">
+          متن
+        </div>
+      </div>
+      <div className="w-full px-4 py-5 bg-white rounded-lg shadow">
+        <div className="text-sm font-medium text-gray-500 truncate">
+          نمونه کارت
+        </div>
+        <div className="mt-1 text-3xl font-semibold text-gray-900">
+          متن
+        </div>
+      </div>
+    </div>
+  );
 }
